@@ -9,11 +9,15 @@ var numberOptions = [1, 8, 5, 12];
 
 function getRandomTarget() {
     targetNumber = Math.floor(Math.random() * (101 + 1)) + 19;
+    $("#target-number").text(targetNumber);
   };
 
   getRandomTarget();
 
-$("#target-number").text(targetNumber);
+function resetCounter(){
+    counter = 0;
+    $("#scoreSoFar").text(counter);
+}
 
 // Create for loop to dynamically create img tags for crystal images and assign random value to each
 
@@ -35,11 +39,16 @@ $(".crystal-image").on("click", function(){
 
     // Display player total score so far on index page
     $("#scoreSoFar").text(counter);
+
+    // Create conditionals to check if player has met target number or not (win/loss)
+    if(counter === targetNumber){
+        wins++;
+        $("#winScore").text(wins);
+        getRandomTarget();
+        resetCounter();                
+    };
+
 });
 
 
 
-// When each is clicked, pull value attr, parse into integer, and add this to the counter
-
-
-// Create conditionals to chck if player has met target number of not (win/loss)
