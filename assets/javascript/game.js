@@ -5,7 +5,15 @@ var losses = 0;
 var counter = 0;
 var numberOptions = [1, 8, 5, 12];
 
-// Randomly generate target number for each game
+// Create function to randomly generate target number for each game 19-120
+
+function getRandomTarget() {
+    targetNumber = Math.floor(Math.random() * (101 + 1)) + 19;
+  };
+
+  getRandomTarget();
+
+$("#target-number").text(targetNumber);
 
 // Create for loop to dynamically create img tags for crystal images and assign random value to each
 
