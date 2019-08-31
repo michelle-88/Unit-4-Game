@@ -48,6 +48,13 @@ $(".crystal-image").on("click", function(){
         resetCounter();                
     };
 
+    if(counter > targetNumber){
+        losses++;
+        $("#lossScore").text(losses);
+        getRandomTarget();
+        resetCounter();
+    };
+
 });
 
 
