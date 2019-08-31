@@ -1,4 +1,11 @@
 // Declare global variables
+var targetNumber;
+var wins = 0;
+var losses = 0;
+var counter = 0;
+var numberOptions = [1, 8, 5, 12];
+
+// Randomly generate target number for each game
 
 // Create for loop to dynamically create img tags for crystal images and assign random value to each
 
