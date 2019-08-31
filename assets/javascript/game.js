@@ -17,6 +17,13 @@ $("#target-number").text(targetNumber);
 
 // Create for loop to dynamically create img tags for crystal images and assign random value to each
 
+for(var i = 0; i < numberOptions.length; i++){
+    var imageCrystal = $("<img>");
+    imageCrystal.addClass("crystal-image");
+    imageCrystal.attr("src", "https://vignette.wikia.nocookie.net/jumpingground/images/0/06/Time_stone.png/revision/latest?cb=20180916204409");
+    imageCrystal.attr("crystalvalue", numberOptions[i]);
+    $("#crystals").append(imageCrystal);
+};
 // Create onclick listener for crystal images
 // When each is clicked, pull value attr, parse into integer, and add this to the counter
 
