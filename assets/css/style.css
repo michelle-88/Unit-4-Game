@@ -2,3 +2,10 @@
     height: 160px;
     width: 100px;
 }
+
+body {
+    background-image: url(../images/Avengers-Infinity-War-International-Poster.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+     
+}
