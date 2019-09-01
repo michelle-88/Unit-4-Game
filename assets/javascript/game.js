@@ -5,7 +5,7 @@ var losses = 0;
 var counter = 0;
 var numberOptions = [1, 8, 5, 12];
 
-// Create function to randomly generate target number for each game 19-120
+// Create function to randomly generate target number for each game
 
 function getRandomTarget() {
     targetNumber = Math.floor(Math.random() * (101 + 1)) + 19;
