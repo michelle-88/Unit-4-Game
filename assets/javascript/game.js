@@ -1,3 +1,5 @@
+$(document).ready(function() {
+
 // Declare global variables
 var targetNumber;
 var wins = 0;
@@ -25,21 +27,27 @@ function getCrystalValues() {
 
 getCrystalValues();
 
-
-function resetCounter(){
+// Create function to reset player counter and numberOptions array
+function resetGame(){
     counter = 0;
     $("#scoreSoFar").text(counter);
+    numberOptions = [];
 }
 
-// Create for loop to dynamically create img tags for crystal images and assign random value to each
-
-for(var i = 0; i < numberOptions.length; i++){
-    var imageCrystal = $("<img>");
-    imageCrystal.addClass("crystal-image");
-    imageCrystal.attr("src", "https://vignette.wikia.nocookie.net/jumpingground/images/0/06/Time_stone.png/revision/latest?cb=20180916204409");
-    imageCrystal.attr("num-crystalvalue", numberOptions[i]);
-    $("#crystals").append(imageCrystal);
+// Create function to dynamically create img tags for crystal images and assign random value to each
+function createCrystals() {
+    for(var i = 0; i < numberOptions.length; i++){
+        var imageCrystal = $("<img>");
+        imageCrystal.addClass("crystal-image");
+        imageCrystal.attr("src", "https://vignette.wikia.nocookie.net/jumpingground/images/0/06/Time_stone.png/revision/latest?cb=20180916204409");
+        imageCrystal.attr("num-crystalvalue", numberOptions[i]);
+        $("#crystals").append(imageCrystal);
+    }
 };
+
+createCrystals();
+
+function initEventListener() {
 
 // Create onclick listener for crystal images
 $(".crystal-image").on("click", function(){
@@ -57,16 +65,28 @@ $(".crystal-image").on("click", function(){
         wins++;
         $("#winScore").text(wins);
         getRandomTarget();
-        resetCounter();                
+        resetGame(); 
+        $("#crystals").empty();
+        getCrystalValues();
+        createCrystals();
+        initEventListener();              
     };
 
     if(counter > targetNumber){
         losses++;
         $("#lossScore").text(losses);
         getRandomTarget();
-        resetCounter();
+        resetGame();
+        $("#crystals").empty();
+        getCrystalValues();
+        createCrystals();
+        initEventListener();
     };
 
+});
+}
+
+initEventListener();
 });
 
 
