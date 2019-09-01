@@ -12,30 +12,56 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     <!-- Link to Bootstrap CDN -->
-    <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/cyborg/bootstrap.min.css" rel="stylesheet" integrity="sha384-mtS696VnV9qeIoC8w/PrPoRzJ5gwydRVn0oQ9b+RJOPxE1Z1jXuuJcyeNxvNZhdx" crossorigin="anonymous">
-    
+    <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/cyborg/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-mtS696VnV9qeIoC8w/PrPoRzJ5gwydRVn0oQ9b+RJOPxE1Z1jXuuJcyeNxvNZhdx" crossorigin="anonymous">
+
     <!-- Link to external stylesheet -->
     <link rel="stylesheet" href="./assets/css/style.css">
 
-    
+
 </head>
 
 <body>
-<div class="container">
-    <h1>Target Number: <span id="target-number"></span></h1>
     
-    <div>
-        <p>Your Total Score: <span id="scoreSoFar"></span></p>
-    </div>
+    <div class="container mt-5">
+        <div class="row">
 
-    <div>
-        <p>Wins: <span id="winScore"></span></p>
-        <p>Losses: <span id="lossScore"></span></p>
+            <div class="card border-light mb-3" style="max-width: 30rem;">
+                <div class="card-header">Instructions</div>
+                <div class="card-body">
+                    <div class="card-text">
+                        <p>Help the Avengers collect the Infinity Stones before Thanos!</p>
+                        <p>At the start of the game, you will be given a random target number and 4 infinity stones. 
+                           By clicking on a stone, you will add a specific amount of points to your total score.</p>
+                        <p>You win the game by matching your total score to the target number, and you will lose if 
+                           your total score goes above the target number.</p>
+                    </div>
+                </div>
+            </div>
+        </div>    
+        
+        <div class="row">
+            <div class="card border-light mb-3" style="max-width: 30rem;">
+                    <div class="card-body">
+                        <h4 class="card-title">Target Number: <span id="target-number"></span></h4>
+                        <div><p>Your Total Score: <span id="scoreSoFar"></span></p></div>
+                        <div>
+                            <p>Wins: <span id="winScore"></span></p>
+                            <p>Losses: <span id="lossScore"></span></p>
+                        </div>
+                    </div>
+            </div>
+        </div>
+
+        <div class="row">
+        <div class="card border-light mb-3" style="max-width: 30rem;">
+            <div class="card-body">
+                <div id="crystals"></div>
+            </div>
+        </div>
+        </div>
+        
     </div>
-    
-    <div id="crystals">
-    </div>
-</div>
     <!-- Link to external javascript file -->
     <script src="./assets/javascript/game.js"></script>
 </body>
