@@ -3,7 +3,7 @@ var targetNumber;
 var wins = 0;
 var losses = 0;
 var counter = 0;
-var numberOptions = [1, 8, 5, 12];
+var numberOptions = [];
 
 // Create function to randomly generate target number for each game
 
@@ -13,6 +13,18 @@ function getRandomTarget() {
   };
 
   getRandomTarget();
+
+// Create function to randomly generate array of 4 numbers for crystal values
+
+function getCrystalValues() {
+    for(var i = 0; i < 4; i++){
+        var randomValue = Math.floor(Math.random() * (11 + 1)) + 1;
+        numberOptions.push(randomValue);
+    }
+};
+
+getCrystalValues();
+
 
 function resetCounter(){
     counter = 0;
