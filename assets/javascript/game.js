@@ -6,6 +6,7 @@ var wins = 0;
 var losses = 0;
 var counter = 0;
 var numberOptions = [];
+var imageOptions = ["./assets/images/time_stone.png", "./assets/images/reality_stone.png", "./assets/images/space_stone.png", "./assets/images/power_stone.png"]
 
 // Create function to randomly generate target number for each game
 
@@ -39,7 +40,7 @@ function createCrystals() {
     for(var i = 0; i < numberOptions.length; i++){
         var imageCrystal = $("<img>");
         imageCrystal.addClass("crystal-image");
-        imageCrystal.attr("src", "https://vignette.wikia.nocookie.net/jumpingground/images/0/06/Time_stone.png/revision/latest?cb=20180916204409");
+        imageCrystal.attr("src", imageOptions[i]);
         imageCrystal.attr("num-crystalvalue", numberOptions[i]);
         $("#crystals").append(imageCrystal);
     }
